@@ -24,4 +24,16 @@ const {
 // MY_CONSTANT_FOR_FUN === "MY_NAME_SPACE.MY_CONSTANT_FOR_FUN"
 ```
 
+```javascript
+const {
+	MY_CONSTANT,
+	MY_FAVOURITE_CONSTANT,
+	MY_CONSTANT_FOR_FUN,
+} = defineConstants("MY_NAME_SPACE", "/")
+
+// MY_CONSTANT === "MY_NAME_SPACE/MY_CONSTANT"
+// MY_FAVOURITE_CONSTANT === "MY_NAME_SPACE/MY_FAVOURITE_CONSTANT"
+// MY_CONSTANT_FOR_FUN === "MY_NAME_SPACE/MY_CONSTANT_FOR_FUN"
+```
+
 TODO: babel plugin to transform the code at compile time.
