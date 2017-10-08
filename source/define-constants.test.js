@@ -8,7 +8,8 @@ test("plain constants", async () => {
 })
 
 test("NS constants", async () => {
-	const { A, B, C } = defineConstants("X")
+	const { X } = defineConstants()
+	const { A, B, C } = defineConstants(X)
 	expect(A).toBe("X.A")
 	expect(B).toBe("X.B")
 	expect(C).toBe("X.C")
