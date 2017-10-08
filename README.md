@@ -2,14 +2,14 @@
 
 Gets rid of repeating stuff when declaring self-defined constants.
 
-Instead of writing smth like that:
+Instead of typing things twice:
 ```javascript
-const MY_CONSTANT = "MY_CONSTANT"
+const MY_CONSTANT = "MY_COSNTANT" // note a mistype
 const MY_FAVOURITE_CONSTANT = "MY_FAVOURITE_CONSTANT"
 const MY_CONSTANT_FOR_FUN = "MY_CONSTANT_FOR_FUN"
 ```
 
-You can write your constant just once when declaring it:
+You can type things once:
 ```javascript
 const {
 	MY_CONSTANT,
@@ -22,7 +22,8 @@ const {
 // MY_CONSTANT_FOR_FUN === "MY_CONSTANT_FOR_FUN"
 ```
 
-and get the same result.
+and get them correct.
+Anyway your `console.log(MY_VARIABLE)` will show the right text and you will never get frustrated searching for a mistyped constant.
 
 You can also add some namespace to your constants:
 ```javascript
