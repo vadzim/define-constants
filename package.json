@@ -1,14 +1,14 @@
 {
-  "name": "@vadzim/name",
+  "name": "define-constants",
   "version": "0.0.1",
   "description": "description",
   "keywords": [],
-  "repository": "https://github.com/vadzim/repository",
+  "repository": "https://github.com/vadzim/define-constants",
   "bugs": {
-    "url": "https://github.com/vadzim/repository/issues"
+    "url": "https://github.com/vadzim/define-constants/issues"
   },
   "contributors": [],
-  "main": "distr/module.js",
+  "main": "distr/define-constants.js",
   "author": "Vadzim Zieńka <developer@vadzim.info>",
   "scripts": {
     "build": "babel source --out-dir distr && cd distr && (for f in $(find | grep -E '.js$'); do cp ../source/$f $f.flow; done) && cd ..",
