@@ -1,6 +1,6 @@
 {
   "name": "define-constants",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "description",
   "keywords": [],
   "repository": "https://github.com/vadzim/define-constants",
@@ -31,6 +31,5 @@
     "jest": "^21.2.1",
     "prettier": "^1.7.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
