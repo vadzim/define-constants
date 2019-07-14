@@ -4,7 +4,7 @@
   "description": "Utility for declaring self-defined constants.",
   "license": "MIT",
   "repository": "https://github.com/vadzim/define-constants",
-  "main": "dist/defineConstants.js",
+  "main": "dist/index.js",
   "bugs": {
     "url": "https://github.com/vadzim/define-constants/issues"
   },

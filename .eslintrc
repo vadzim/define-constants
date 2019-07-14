@@ -32,13 +32,12 @@
     ],
     "no-await-in-loop": "off",
     "no-return-await": "off",
-    // "import/no-default-export": "error",
-    // "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
     "func-names": "off",
     "no-void": "off",
     "no-plusplus": "off",
     "require-yield": "off",
-    "import/extensions": ["error", "always"],
     "no-use-before-define": "off",
   }
 }
