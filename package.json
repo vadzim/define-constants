@@ -1,6 +1,6 @@
 {
   "name": "define-constants",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Utility for declaring self-defined constants.",
   "license": "MIT",
   "repository": "https://github.com/vadzim/define-constants",
