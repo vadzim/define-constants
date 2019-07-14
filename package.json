@@ -1,35 +1,80 @@
 {
   "name": "define-constants",
   "version": "1.0.5",
-  "description": "description",
-  "keywords": [],
+  "description": "Utility for declaring self-defined constants.",
+  "license": "MIT",
   "repository": "https://github.com/vadzim/define-constants",
+  "main": "dist/defineConstants.js",
   "bugs": {
     "url": "https://github.com/vadzim/define-constants/issues"
   },
-  "contributors": [],
-  "main": "distr/define-constants.js",
-  "author": "Vadzim Zieńka <developer@vadzim.info>",
+  "author": {
+    "name": "Vadzim Zieńka",
+    "email": "v@vadzim.info",
+    "url": "https://github.com/vadzim"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "rm distr/*; babel source --out-dir distr && cd distr && (for f in $(find | grep -E '.js$'); do if grep @flow ../source/$f >/dev/null; then cp ../source/$f $f.flow; fi; done) && cd ..",
-    "prettier": "prettier --write $(cat .prettier) 'source/**/*.js' 'example/**/*.js' '*.js'",
-    "prepare": "npm run build",
     "test": "jest",
-    "go": "npm run prettier && npm run build && npm run test"
+    "coverage": "npm test -- --coverage --collectCoverageFrom=src/**/*.js",
+    "lint": "eslint .",
+    "flow": "flow check",
+    "flowinstall": "flow-typed install --ignoreDeps=dev",
+    "docs": "documentation --config documentation.yml readme src --section=API",
+    "postdocs": "git add README.md",
+    "clean": "rimraf dist",
+    "flowbuild": "flow-copy-source src dist",
+    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    "build": "babel src -d dist",
+    "preversion": "npm run flowinstall && npm run lint && npm test && npm run build",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "postpublish": "git push origin master --follow-tags",
+    "sendcodecov": "codecov --token=$CODECOV_TOKEN"
   },
-  "license": "MIT",
+  "lint-changed": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "keywords": [
+    "define",
+    "constants"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-idx": "^2.0.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "flow-bin": "^0.56.0",
-    "idx": "^1.5.0",
-    "jest": "^21.2.1",
-    "prettier": "^1.7.4"
-  },
-  "dependencies": {}
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "codecov": "^3.5.0",
+    "documentation": "^12.0.1",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-flowtype": "^3.11.1",
+    "eslint-plugin-flowtype-errors": "^4.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "flow-bin": "^0.102.0",
+    "flow-copy-source": "^2.0.7",
+    "flow-typed": "^2.5.2",
+    "jest": "^24.8.0",
+    "lint-changed": "0.0.0-development",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hooks-testing-library": "^0.6.0",
+    "react-test-renderer": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "standard-changelog": "^2.0.11"
+  }
 }

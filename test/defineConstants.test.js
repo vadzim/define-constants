@@ -1,4 +1,4 @@
-import defineConstants from "./define-constants"
+import defineConstants from "../src/defineConstants.js"
 
 test("plain constants", async () => {
 	const { A, B, C } = defineConstants()
